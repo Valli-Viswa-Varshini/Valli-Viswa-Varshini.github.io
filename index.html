@@ -9,19 +9,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f3f4f6;
+            background: #e0f7fa;
             color: #333;
+            overflow-x: hidden;
         }
         header {
-            background: linear-gradient(135deg, #72edf2, #5151e5);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #fff;
             padding: 2rem 0;
             text-align: center;
-            animation: headerAnimation 1s ease-in-out;
-        }
-        @keyframes headerAnimation {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
@@ -35,12 +34,20 @@
             padding: 2rem;
             max-width: 1000px;
             margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         h2 {
-            color: #5151e5;
-            border-bottom: 2px solid #72edf2;
+            color: #ff9a9e;
+            border-bottom: 2px solid #fad0c4;
             display: inline-block;
             margin-bottom: 1rem;
+            font-size: 2rem;
         }
         .contact, .social {
             display: flex;
@@ -55,13 +62,13 @@
         .social a {
             text-decoration: none;
             color: #fff;
-            background: #5151e5;
+            background: #ff9a9e;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             transition: background 0.3s;
         }
         .social a:hover {
-            background: #72edf2;
+            background: #fad0c4;
         }
         .projects, .experience {
             background: #fff;
@@ -79,14 +86,15 @@
             padding: 0;
         }
         li {
-            background: #5151e5;
+            background: #ff9a9e;
             color: #fff;
             margin: 0.5rem 0;
             padding: 0.5rem;
             border-radius: 5px;
+            transition: background 0.3s;
         }
         li:hover {
-            background: #72edf2;
+            background: #fad0c4;
         }
         footer {
             text-align: center;
@@ -94,11 +102,48 @@
             background: #333;
             color: #fff;
         }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate {
+            opacity: 0;
+            animation: slideIn 1s forwards;
+        }
+        .animate-header {
+            animation: slideIn 1s forwards 0.5s;
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const options = {
+                threshold: 0.5
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </head>
 <body>
 
-<header>
+<header class="animate animate-header">
     <h1>Valli Viswa Varshini M</h1>
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
     <div class="contact">
@@ -113,7 +158,8 @@
 
 <section>
     <h2>About Me</h2>
-    <p>Adaptable student with knowledge of application development, configuration management, and database designing.</p>
+    <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing. My academic journey in Artificial Intelligence and Machine Learning has equipped me with the skills necessary to tackle complex problems and develop innovative solutions. I am always eager to learn new things and take on challenging projects that push my limits and expand my knowledge.</p>
+    <p>When I'm not immersed in coding, you can find me painting, drawing, or indulging in photography. I believe that creativity and technical skills go hand in hand, and my interests in art and design often inspire my approach to problem-solving in the tech world.</p>
 </section>
 
 <section>
