@@ -6,48 +6,93 @@
     <title>Valli Viswa Varshini M's Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background: #f3f4f6;
+            color: #333;
         }
         header {
-            background: #333;
+            background: linear-gradient(135deg, #72edf2, #5151e5);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
+            animation: headerAnimation 1s ease-in-out;
+        }
+        @keyframes headerAnimation {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         header h1 {
             margin: 0;
+            font-size: 2.5rem;
         }
         header p {
-            margin: 0;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
         }
         section {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
         }
         h2 {
-            color: #333;
+            color: #5151e5;
+            border-bottom: 2px solid #72edf2;
+            display: inline-block;
+            margin-bottom: 1rem;
         }
         .contact, .social {
             display: flex;
             justify-content: center;
             gap: 1rem;
+            margin-top: 1rem;
         }
         .contact p, .social a {
             margin: 0;
+            color: #fff;
         }
         .social a {
             text-decoration: none;
-            color: #0073b1;
+            color: #fff;
+            background: #5151e5;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .social a:hover {
+            background: #72edf2;
         }
         .projects, .experience {
-            background: #f4f4f4;
+            background: #fff;
             margin: 2rem 0;
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .projects:hover, .experience:hover {
+            transform: translateY(-10px);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #5151e5;
+            color: #fff;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+        li:hover {
+            background: #72edf2;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
         }
     </style>
 </head>
@@ -57,7 +102,7 @@
     <h1>Valli Viswa Varshini M</h1>
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
     <div class="contact">
-        <p>Email: <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
+        <p>Email: <a href="mailto:valliviswavarshini@gmail.com" style="color: #fff; text-decoration: none;">valliviswavarshini@gmail.com</a></p>
         <p>Phone: 6382897656</p>
     </div>
     <div class="social">
@@ -123,6 +168,10 @@
     <h2>Interests</h2>
     <p>Painting, Drawing, Photography, Editing, Designing</p>
 </section>
+
+<footer>
+    <p>&copy; 2024 Valli Viswa Varshini M. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
