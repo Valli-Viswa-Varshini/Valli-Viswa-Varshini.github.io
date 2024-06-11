@@ -9,49 +9,23 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #e0f7fa;
+            background: #f0f4f8;
             color: #333;
             overflow-x: hidden;
         }
         header {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
         header p {
             margin: 0.5rem 0;
-            font-size: 1rem;
-        }
-        .main-content {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        .circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 1rem;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .circle.visible {
-            opacity: 1;
-            transform: scale(1);
+            font-size: 1.2rem;
         }
         section {
             padding: 2rem;
@@ -72,7 +46,7 @@
             margin-bottom: 1rem;
             font-size: 2rem;
         }
-        .projects, .experience {
+        .info, .projects, .achievements, .certificates {
             background: #fff;
             margin: 2rem 0;
             padding: 1.5rem;
@@ -80,23 +54,22 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        .projects:hover, .experience:hover {
+        .info:hover, .projects:hover, .achievements:hover, .certificates:hover {
             transform: translateY(-10px);
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background: #ff9a9e;
+        .shape {
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
             color: #fff;
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: background 0.3s;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
-        li:hover {
-            background: #fad0c4;
+        .shape.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         footer {
             text-align: center;
@@ -107,8 +80,8 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const circles = document.querySelectorAll('.circle');
             const sections = document.querySelectorAll('section');
+            const shapes = document.querySelectorAll('.shape');
             const options = {
                 threshold: 0.5
             };
@@ -121,12 +94,12 @@
                 });
             }, options);
 
-            circles.forEach(circle => {
-                observer.observe(circle);
-            });
-
             sections.forEach(section => {
                 observer.observe(section);
+            });
+
+            shapes.forEach(shape => {
+                observer.observe(shape);
             });
         });
     </script>
@@ -138,68 +111,69 @@
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
 </header>
 
-<div class="main-content">
-    <div class="circle">
-        <div>
-            <h2>About Me</h2>
-            <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
-        </div>
+<section class="info">
+    <div class="shape">
+        <h2>About Me</h2>
+        <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
+        <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
+        <p>Skills: C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
     </div>
-    <div class="circle">
-        <div>
-            <h2>Education</h2>
-            <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
-        </div>
-    </div>
-    <div class="circle">
-        <div>
-            <h2>Skills</h2>
-            <p>C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
-        </div>
-    </div>
-</div>
+</section>
 
 <section class="projects">
     <h2>Projects</h2>
-    <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
-    <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
-    
-    <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
-    <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
-    
-    <h3>Login Automation - Using UiPath (11/2023)</h3>
-    <p>Created an automation project in Uipath which does the basic login process automatically.</p>
-    
-    <h3>Online Portfolio (10/2023)</h3>
-    <p>Created an online portfolio which generates a portfolio with user-given inputs.</p>
-    
-    <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
-    <p>Created a Cricket scorecard management system with basic C programming.</p>
+    <div class="shape">
+        <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
+        <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
+    </div>
+    <div class="shape">
+        <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
+        <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
+    </div>
+    <div class="shape">
+        <h3>Login Automation - Using UiPath (11/2023)</h3>
+        <p>Created an automation project in Uipath which does the basic login process automatically.</p>
+    </div>
+    <div class="shape">
+        <h3>Online Portfolio (10/2023)</h3>
+        <p>Created an online portfolio which generates a portfolio with user-given inputs.</p>
+    </div>
+    <div class="shape">
+        <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
+        <p>Created a Cricket scorecard management system with basic C programming.</p>
+    </div>
 </section>
 
-<section class="experience">
-    <h2>Experience</h2>
-    <h3>Cybersecurity Research Intern, Zetpeak (08/2023 - Present)</h3>
-    <p>Conducted a literature review to identify the latest research in a field of study, allowing for more informed decision-making on the research project. Published a research paper in a peer-reviewed journal, resulting in increased visibility for the research group.</p>
+<section class="achievements">
+    <h2>Achievements</h2>
+    <div class="shape">
+        <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
+    </div>
+    <div class="shape">
+        <p>Gold and Bronze medals in SOF competitions</p>
+    </div>
+    <div class="shape">
+        <p>Basics of robotics and attended competitions</p>
+    </div>
 </section>
 
-<section>
-    <h2>Achievements and Certificates</h2>
-    <ul>
-        <li>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</li>
-        <li>Gold and Bronze medals in SOF competitions</li>
-        <li>Basics of robotics and attended competitions</li>
-        <li>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</li>
-        <li>Introduction to Robotic Process Automation - Infosys Springboard</li>
-        <li>RPA Basics and Introduction to Uipath - Coursera</li>
-        <li>Data Manipulation in RPA - Coursera</li>
-        <li>Control Flow in RPA - Coursera</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Interests</h2>
-    <p>Painting, Drawing, Photography, Editing, Designing</p>
+<section class="certificates">
+    <h2>Certificates</h2>
+    <div class="shape">
+        <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
+    </div>
+    <div class="shape">
+        <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
+    </div>
+    <div class="shape">
+        <p>RPA Basics and Introduction to Uipath - Coursera</p>
+    </div>
+    <div class="shape">
+        <p>Data Manipulation in RPA - Coursera</p>
+    </div>
+    <div class="shape">
+        <p>Control Flow in RPA - Coursera</p>
+    </div>
 </section>
 
 <footer>
