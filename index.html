@@ -16,19 +16,42 @@
         header {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #fff;
-            padding: 2rem 0;
+            padding: 1rem 0;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
         header p {
             margin: 0.5rem 0;
-            font-size: 1.2rem;
+            font-size: 1rem;
+        }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .circle.visible {
+            opacity: 1;
+            transform: scale(1);
         }
         section {
             padding: 2rem;
@@ -48,27 +71,6 @@
             display: inline-block;
             margin-bottom: 1rem;
             font-size: 2rem;
-        }
-        .contact, .social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .contact p, .social a {
-            margin: 0;
-            color: #fff;
-        }
-        .social a {
-            text-decoration: none;
-            color: #fff;
-            background: #ff9a9e;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .social a:hover {
-            background: #fad0c4;
         }
         .projects, .experience {
             background: #fff;
@@ -102,26 +104,10 @@
             background: #333;
             color: #fff;
         }
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate {
-            opacity: 0;
-            animation: slideIn 1s forwards;
-        }
-        .animate-header {
-            animation: slideIn 1s forwards 0.5s;
-        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const circles = document.querySelectorAll('.circle');
             const sections = document.querySelectorAll('section');
             const options = {
                 threshold: 0.5
@@ -135,6 +121,10 @@
                 });
             }, options);
 
+            circles.forEach(circle => {
+                observer.observe(circle);
+            });
+
             sections.forEach(section => {
                 observer.observe(section);
             });
@@ -143,34 +133,31 @@
 </head>
 <body>
 
-<header class="animate animate-header">
+<header>
     <h1>Valli Viswa Varshini M</h1>
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
-    <div class="contact">
-        <p>Email: <a href="mailto:valliviswavarshini@gmail.com" style="color: #fff; text-decoration: none;">valliviswavarshini@gmail.com</a></p>
-        <p>Phone: 6382897656</p>
-    </div>
-    <div class="social">
-        <a href="https://linkedin.com/in/valli-viswa-varshini-m-0947a7265">LinkedIn</a>
-        <a href="https://github.com/Valli-Viswa-Varshini">GitHub</a>
-    </div>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing. My academic journey in Artificial Intelligence and Machine Learning has equipped me with the skills necessary to tackle complex problems and develop innovative solutions. I am always eager to learn new things and take on challenging projects that push my limits and expand my knowledge.</p>
-    <p>When I'm not immersed in coding, you can find me painting, drawing, or indulging in photography. I believe that creativity and technical skills go hand in hand, and my interests in art and design often inspire my approach to problem-solving in the tech world.</p>
-</section>
-
-<section>
-    <h2>Education</h2>
-    <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
-</section>
-
-<section>
-    <h2>Skills</h2>
-    <p>C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
-</section>
+<div class="main-content">
+    <div class="circle">
+        <div>
+            <h2>About Me</h2>
+            <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
+        </div>
+    </div>
+    <div class="circle">
+        <div>
+            <h2>Education</h2>
+            <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
+        </div>
+    </div>
+    <div class="circle">
+        <div>
+            <h2>Skills</h2>
+            <p>C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
+        </div>
+    </div>
+</div>
 
 <section class="projects">
     <h2>Projects</h2>
