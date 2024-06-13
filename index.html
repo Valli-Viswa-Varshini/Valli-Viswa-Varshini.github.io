@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valli Viswa Varshini M's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background: #f0f4f8;
@@ -18,17 +19,50 @@
             color: #fff;
             padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out;
         }
         header p {
             margin: 0.5rem 0;
+            font-size: 1.3rem;
+            animation: fadeIn 2s ease-in-out 0.5s;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            animation: slideIn 1s ease-out;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
             font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff9a9e;
         }
         .section {
-            padding: 2rem;
+            padding: 3rem 2rem;
             max-width: 1000px;
             margin: auto;
             opacity: 0;
@@ -41,17 +75,18 @@
         }
         h2 {
             color: #ff9a9e;
-            border-bottom: 2px solid #fad0c4;
+            border-bottom: 3px solid #fad0c4;
             display: inline-block;
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
         .shape {
-            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-            color: #fff;
-            padding: 1rem;
+            background: #fff;
+            color: #333;
+            padding: 1.5rem;
             border-radius: 8px;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-out, transform 1s ease-out;
@@ -60,13 +95,16 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .shape.project {
+        .shape h3 {
+            margin-top: 0;
+        }
+        .project {
             background: linear-gradient(135deg, #84fab0, #8fd3f4);
         }
-        .shape.achievement {
+        .achievement {
             background: linear-gradient(135deg, #fccb90, #d57eeb);
         }
-        .shape.certificate {
+        .certificate {
             background: linear-gradient(135deg, #ffecd2, #fcb69f);
         }
         footer {
@@ -77,36 +115,18 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
         }
         footer p {
             margin: 0;
         }
-        nav {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #ff9a9e;
+        @keyframes slideIn {
+            from { transform: translateY(-20px); }
+            to { transform: translateY(0); }
         }
     </style>
     <script>
@@ -159,6 +179,7 @@
     <h2>Education</h2>
     <div class="shape">
         <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
+        <p>Current CGPA: 8.46</p>
         <p>Skills: C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
     </div>
 </section>
@@ -173,43 +194,78 @@
         <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
         <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
     </div>
-    <!-- Other projects as needed -->
+    <div class="shape project">
+        <h3>Sentiment Analysis (01/2024)</h3>
+        <p>Developed a sentiment analysis ML model using customer review data, leveraging Python and machine learning algorithms to analyze and classify sentiment accurately. Employed techniques like data pre-processing, feature engineering, and model evaluation for robust performance.</p>
+    </div>
+    <div class="shape project">
+        <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
+        <p>Created a Cricket scorecard management system with basic C programming.</p>
+    </div>
 </section>
 
 <section class="section" id="skills">
     <h2>Skills</h2>
     <div class="shape">
-        <p>List of skills and proficiency levels</p>
+        <p>C, Python, Java, Microsoft Excel, SQL, Power BI, Microsoft Office Word, Microsoft PowerPoint, Communication Skills, Figma, Canva, FlutterFlow, Uipath</p>
     </div>
 </section>
 
 <section class="section" id="experience">
     <h2>Experience</h2>
     <div class="shape">
-        <p>Details of work experience or internships</p>
+        <h3>ML Intern at Codsoft (01/2024 - 02/2024)</h3>
+        <p>Created 3 ML projects such as Credit card fraud detection, Customer Churn Detection, SMS Spam Detection which includes data preprocessing and predicting the output.</p>
+        <h3>Cybersecurity Research Intern at Zetpeak (08/2023 - Present)</h3>
+        <p>Conducted a literature review to identify the latest research in a field of study, allowing for more informed decision-making on the research project. Published a research paper in a peer-reviewed journal, resulting in increased visibility for the research group.</p>
     </div>
 </section>
 
 <section class="section" id="achievements">
     <h2>Achievements</h2>
     <div class="shape achievement">
-        <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
+        <p>HACK-AI-THON 2024 - Runner Up (02/2024): Created an analysis dashboard using Power BI by correlating data LULC (Land Use Land Cover) and GDP data from Bhuvan and RBI websites.</p>
     </div>
-    <!-- Other achievements as needed -->
+    <div class="shape achievement">
+        <p>Finalist in NO-CODE AI Hackathon (02/2024): Created the front-end prototype of our idea in Flutterflow.</p>
+    </div>
+    <div class="shape achievement">
+        <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering: Organized and coordinated events with volunteers, ensuring all necessary resources were available in our college Symposium.</p>
+    </div>
+    <div class="shape achievement">
+        <p>Participated in SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</p>
+    </div>
 </section>
 
 <section class="section" id="certificates">
     <h2>Certificates</h2>
     <div class="shape certificate">
+        <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
+    </div>
+    <div class="shape certificate">
+        <p>RPA Basics and Introduction to Uipath - Coursera</p>
+    </div>
+    <div class="shape certificate">
+        <p>Data Manipulation in RPA - Coursera</p>
+    </div>
+    <div class="shape certificate">
+        <p>Control Flow in RPA - Coursera</p>
+    </div>
+    <div class="shape certificate">
+        <p>Advanced Excel Course for job and real world - Udemy</p>
+    </div>
+    <div class="shape certificate">
         <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
     </div>
-    <!-- Other certificates as needed -->
 </section>
 
 <section class="section" id="contact">
     <h2>Contact</h2>
     <div class="shape">
-        <p>Contact information or contact form</p>
+        <p>Email: <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
+        <p>Phone: 6382897656</p>
+        <p>Location: Chennai, India</p>
+        <p><a href="https://www.linkedin.com/in/valli-viswa-varshini-m-0947a7265" target="_blank">LinkedIn</a> | <a href="https://github.com/Valli-Viswa-Varshini" target="_blank">GitHub</a></p>
     </div>
 </section>
 
