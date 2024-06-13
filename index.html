@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valli Viswa Varshini M's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,16 +17,25 @@
         header {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #fff;
-            padding: 2rem 0;
+            padding: 1rem 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
         }
-        header p {
-            margin: 0.5rem 0;
-            font-size: 1.2rem;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         .section {
             padding: 2rem;
@@ -107,9 +117,16 @@
 <header>
     <h1>Valli Viswa Varshini M</h1>
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<section class="section info">
+<section id="about" class="section info">
     <div class="shape">
         <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
         <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
@@ -117,7 +134,7 @@
     </div>
 </section>
 
-<section class="section projects">
+<section id="projects" class="section projects">
     <h2>Projects</h2>
     <div class="shape project">
         <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
@@ -141,7 +158,7 @@
     </div>
 </section>
 
-<section class="section achievements">
+<section id="achievements" class="section achievements">
     <h2>Achievements</h2>
     <div class="shape achievement">
         <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
@@ -154,7 +171,7 @@
     </div>
 </section>
 
-<section class="section certificates">
+<section id="certificates" class="section certificates">
     <h2>Certificates</h2>
     <div class="shape certificate">
         <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
@@ -171,6 +188,19 @@
     <div class="shape certificate">
         <p>Control Flow in RPA - Coursera</p>
     </div>
+</section>
+
+<section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/{your-form-id}" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+    </form>
 </section>
 
 <footer>
