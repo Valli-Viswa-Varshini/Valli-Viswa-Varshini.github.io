@@ -74,6 +74,39 @@
             padding: 1rem 0;
             background: #333;
             color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff9a9e;
         }
     </style>
     <script>
@@ -104,20 +137,33 @@
 </head>
 <body>
 
-<header>
+<nav>
+    <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header id="about">
     <h1>Valli Viswa Varshini M</h1>
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
 </header>
 
-<section class="section info">
+<section class="section" id="education">
+    <h2>Education</h2>
     <div class="shape">
-        <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
         <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
         <p>Skills: C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
     </div>
 </section>
 
-<section class="section projects">
+<section class="section" id="projects">
     <h2>Projects</h2>
     <div class="shape project">
         <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
@@ -127,49 +173,43 @@
         <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
         <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
     </div>
-    <div class="shape project">
-        <h3>Login Automation - Using UiPath (11/2023)</h3>
-        <p>Created an automation project in Uipath which does the basic login process automatically.</p>
-    </div>
-    <div class="shape project">
-        <h3>Online Portfolio (10/2023)</h3>
-        <p>Created an online portfolio which generates a portfolio with user-given inputs.</p>
-    </div>
-    <div class="shape project">
-        <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
-        <p>Created a Cricket scorecard management system with basic C programming.</p>
+    <!-- Other projects as needed -->
+</section>
+
+<section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="shape">
+        <p>List of skills and proficiency levels</p>
     </div>
 </section>
 
-<section class="section achievements">
+<section class="section" id="experience">
+    <h2>Experience</h2>
+    <div class="shape">
+        <p>Details of work experience or internships</p>
+    </div>
+</section>
+
+<section class="section" id="achievements">
     <h2>Achievements</h2>
     <div class="shape achievement">
         <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
     </div>
-    <div class="shape achievement">
-        <p>Gold and Bronze medals in SOF competitions</p>
-    </div>
-    <div class="shape achievement">
-        <p>Basics of robotics and attended competitions</p>
-    </div>
+    <!-- Other achievements as needed -->
 </section>
 
-<section class="section certificates">
+<section class="section" id="certificates">
     <h2>Certificates</h2>
     <div class="shape certificate">
         <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
     </div>
-    <div class="shape certificate">
-        <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
-    </div>
-    <div class="shape certificate">
-        <p>RPA Basics and Introduction to Uipath - Coursera</p>
-    </div>
-    <div class="shape certificate">
-        <p>Data Manipulation in RPA - Coursera</p>
-    </div>
-    <div class="shape certificate">
-        <p>Control Flow in RPA - Coursera</p>
+    <!-- Other certificates as needed -->
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="shape">
+        <p>Contact information or contact form</p>
     </div>
 </section>
 
