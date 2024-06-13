@@ -12,7 +12,6 @@
             padding: 0;
             background: #f0f4f8;
             color: #333;
-            overflow-x: hidden;
         }
         header {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -24,12 +23,10 @@
         header h1 {
             margin: 0;
             font-size: 3rem;
-            animation: fadeIn 2s ease-in-out;
         }
         header p {
             margin: 0.5rem 0;
             font-size: 1.3rem;
-            animation: fadeIn 2s ease-in-out 0.5s;
         }
         nav {
             background: #333;
@@ -47,7 +44,6 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            animation: slideIn 1s ease-out;
         }
         nav ul li {
             margin: 0 10px;
@@ -120,22 +116,51 @@
         footer p {
             margin: 0;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .skill-icon {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
-        @keyframes slideIn {
-            from { transform: translateY(-20px); }
-            to { transform: translateY(0); }
+        .skill-icon:hover {
+            transform: scale(1.2);
+        }
+        .skill-icon img {
+            width: 80px;
+            height: 80px;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const pages = document.querySelectorAll('.page');
             const sections = document.querySelectorAll('.section');
             const shapes = document.querySelectorAll('.shape');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href').substring(1);
+                    pages.forEach(page => {
+                        if (page.id === targetId) {
+                            page.classList.add('active');
+                        } else {
+                            page.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
             const options = {
                 threshold: 0.5
             };
+
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -170,104 +195,153 @@
     </ul>
 </nav>
 
-<header id="about">
-    <h1>Valli Viswa Varshini M</h1>
-    <p>B.Tech Student of St. Joseph's College Of Engineering</p>
-</header>
+<div class="page active" id="about">
+    <header>
+        <h1>Valli Viswa Varshini M</h1>
+        <p>B.Tech Student of St. Joseph's College Of Engineering</p>
+    </header>
+</div>
 
-<section class="section" id="education">
-    <h2>Education</h2>
-    <div class="shape">
-        <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
-        <p>Current CGPA: 8.46</p>
-        <p>Skills: C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
-    </div>
-</section>
+<div class="page" id="education">
+    <section class="section">
+        <h2>Education</h2>
+        <div class="shape">
+            <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
+        </div>
+    </section>
+</div>
 
-<section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="shape project">
-        <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
-        <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
-    </div>
-    <div class="shape project">
-        <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
-        <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
-    </div>
-    <div class="shape project">
-        <h3>Sentiment Analysis (01/2024)</h3>
-        <p>Developed a sentiment analysis ML model using customer review data, leveraging Python and machine learning algorithms to analyze and classify sentiment accurately. Employed techniques like data pre-processing, feature engineering, and model evaluation for robust performance.</p>
-    </div>
-    <div class="shape project">
-        <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
-        <p>Created a Cricket scorecard management system with basic C programming.</p>
-    </div>
-</section>
+<div class="page" id="projects">
+    <section class="section">
+        <h2>Projects</h2>
+        <div class="shape project">
+            <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
+            <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
+        </div>
+        <div class="shape project">
+            <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
+            <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
+        </div>
+        <div class="shape project">
+            <h3>Sentiment Analysis (01/2024)</h3>
+            <p>Developed a sentiment analysis ML model using customer review data, leveraging Python and machine learning algorithms to analyze and classify sentiment accurately. Employed techniques like data pre-processing, feature engineering, and model evaluation for robust performance.</p>
+        </div>
+        <div class="shape project">
+            <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
+            <p>Created a Cricket scorecard management system with basic C programming.</p>
+        </div>
+    </section>
+</div>
 
-<section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="shape">
-        <p>C, Python, Java, Microsoft Excel, SQL, Power BI, Microsoft Office Word, Microsoft PowerPoint, Communication Skills, Figma, Canva, FlutterFlow, Uipath</p>
-    </div>
-</section>
+<div class="page" id="skills">
+    <section class="section">
+        <h2>Skills</h2>
+        <div class="shape">
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/c-programming.png" alt="C">
+                <p>C</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/java-coffee-cup-logo.png" alt="Java">
+                <p>Java</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/microsoft-excel-2019.png" alt="Excel">
+                <p>Microsoft Excel</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/sql.png" alt="SQL">
+                <p>SQL</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/adobe-photoshop--v1.png" alt="Photoshop">
+                <p>Adobe Photoshop</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/microsoft-office-2019.png" alt="Microsoft Office">
+                <p>Microsoft Office</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/figma.png" alt="Figma">
+                <p>Figma</p>
+            </div>
+            <div class="skill-icon">
+                <img src="https://img.icons8.com/color/96/000000/canva.png" alt="Canva">
+                <p>Canva</p>
+            </div>
+        </div>
+    </section>
+</div>
 
-<section class="section" id="experience">
-    <h2>Experience</h2>
-    <div class="shape">
-        <h3>ML Intern at Codsoft (01/2024 - 02/2024)</h3>
-        <p>Created 3 ML projects such as Credit card fraud detection, Customer Churn Detection, SMS Spam Detection which includes data preprocessing and predicting the output.</p>
-        <h3>Cybersecurity Research Intern at Zetpeak (08/2023 - Present)</h3>
-        <p>Conducted a literature review to identify the latest research in a field of study, allowing for more informed decision-making on the research project. Published a research paper in a peer-reviewed journal, resulting in increased visibility for the research group.</p>
-    </div>
-</section>
+<div class="page" id="experience">
+    <section class="section">
+        <h2>Experience</h2>
+        <div class="shape">
+            <h3>ML Intern at Codsoft (01/2024 - 02/2024)</h3>
+            <p>Created 3 ML projects such as Credit card fraud detection, Customer Churn Detection, SMS Spam Detection which includes data preprocessing and predicting the output.</p>
+            <h3>Cybersecurity Research Intern at Zetpeak (08/2023 - Present)</h3>
+            <p>Conducted a literature review to identify the latest research in a field of study, allowing for more informed decision-making on the research project. Published a research paper in a peer-reviewed journal, resulting in increased visibility for the research group.</p>
+        </div>
+    </section>
+</div>
 
-<section class="section" id="achievements">
-    <h2>Achievements</h2>
-    <div class="shape achievement">
-        <p>HACK-AI-THON 2024 - Runner Up (02/2024): Created an analysis dashboard using Power BI by correlating data LULC (Land Use Land Cover) and GDP data from Bhuvan and RBI websites.</p>
-    </div>
-    <div class="shape achievement">
-        <p>Finalist in NO-CODE AI Hackathon (02/2024): Created the front-end prototype of our idea in Flutterflow.</p>
-    </div>
-    <div class="shape achievement">
-        <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering: Organized and coordinated events with volunteers, ensuring all necessary resources were available in our college Symposium.</p>
-    </div>
-    <div class="shape achievement">
-        <p>Participated in SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</p>
-    </div>
-</section>
+<div class="page" id="achievements">
+    <section class="section">
+        <h2>Achievements</h2>
+        <div class="shape achievement">
+            <p>HACK-AI-THON 2024 - Runner Up (02/2024): Created an analysis dashboard using Power BI by correlating data LULC (Land Use Land Cover) and GDP data from Bhuvan and RBI websites.</p>
+        </div>
+        <div class="shape achievement">
+            <p>Finalist in NO-CODE AI Hackathon (02/2024): Created the front-end prototype of our idea in Flutterflow.</p>
+        </div>
+        <div class="shape achievement">
+            <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering: Organized and coordinated events with volunteers, ensuring all necessary resources were available in our college Symposium.</p>
+        </div>
+        <div class="shape achievement">
+            <p>Participated in SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</p>
+        </div>
+    </section>
+</div>
 
-<section class="section" id="certificates">
-    <h2>Certificates</h2>
-    <div class="shape certificate">
-        <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
-    </div>
-    <div class="shape certificate">
-        <p>RPA Basics and Introduction to Uipath - Coursera</p>
-    </div>
-    <div class="shape certificate">
-        <p>Data Manipulation in RPA - Coursera</p>
-    </div>
-    <div class="shape certificate">
-        <p>Control Flow in RPA - Coursera</p>
-    </div>
-    <div class="shape certificate">
-        <p>Advanced Excel Course for job and real world - Udemy</p>
-    </div>
-    <div class="shape certificate">
-        <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
-    </div>
-</section>
+<div class="page" id="certificates">
+    <section class="section">
+        <h2>Certificates</h2>
+        <div class="shape certificate">
+            <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
+        </div>
+        <div class="shape certificate">
+            <p>RPA Basics and Introduction to Uipath - Coursera</p>
+        </div>
+        <div class="shape certificate">
+            <p>Data Manipulation in RPA - Coursera</p>
+        </div>
+        <div class="shape certificate">
+            <p>Control Flow in RPA - Coursera</p>
+        </div>
+        <div class="shape certificate">
+            <p>Advanced Excel Course for job and real world - Udemy</p>
+        </div>
+        <div class="shape certificate">
+            <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
+        </div>
+    </section>
+</div>
 
-<section class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="shape">
-        <p>Email: <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
-        <p>Phone: 6382897656</p>
-        <p>Location: Chennai, India</p>
-        <p><a href="https://www.linkedin.com/in/valli-viswa-varshini-m-0947a7265" target="_blank">LinkedIn</a> | <a href="https://github.com/Valli-Viswa-Varshini" target="_blank">GitHub</a></p>
-    </div>
-</section>
+<div class="page" id="contact">
+    <section class="section">
+        <h2>Contact</h2>
+        <div class="shape">
+            <p>Email: <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
+            <p>Phone: 6382897656</p>
+            <p>Location: Chennai, India</p>
+            <p><a href="https://www.linkedin.com/in/valli-viswa-varshini-m-0947a7265" target="_blank">LinkedIn</a> | <a href="https://github.com/Valli-Viswa-Varshini" target="_blank">GitHub</a></p>
+        </div>
+    </section>
+</div>
 
 <footer>
     <p>&copy; 2024 Valli Viswa Varshini M. All Rights Reserved.</p>
