@@ -3,230 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valli Viswa Varshini M - Portfolio</title>
+    <title>Valli Viswa Varshini M's Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: #f0f4f8;
+            color: #333;
+            overflow-x: hidden;
         }
-
         header {
-            background: #333;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #fff;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #fff;
-            color: #333;
-            border-radius: 5px;
-        }
-
-        .section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: 60px auto;
-        }
-
-        h1, h2 {
+            padding: 2rem 0;
             text-align: center;
-            color: #333;
         }
-
-        h2 {
-            margin-top: 40px;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
         }
-
-        .card {
-            background: #fff;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+        header p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
         }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
+        .section {
+            padding: 2rem;
+            max-width: 1000px;
             margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
-
-        label {
-            margin: 10px 0 5px;
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        input, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
+        h2 {
+            color: #ff9a9e;
+            border-bottom: 2px solid #fad0c4;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 2rem;
         }
-
-        button {
-            padding: 10px;
-            border: none;
-            background: #333;
+        .shape {
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
             color: #fff;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
-
-        button:hover {
-            background: #555;
+        .shape.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
+        .shape.project {
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+        }
+        .shape.achievement {
+            background: linear-gradient(135deg, #fccb90, #d57eeb);
+        }
+        .shape.certificate {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 1rem 0;
             background: #333;
             color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
         }
     </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about" class="section">
-        <h1>Valli Viswa Varshini M</h1>
-        <p>B.Tech Student at St. Joseph's College Of Engineering</p>
-        <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
-    </section>
-
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="card">
-            <h3>Shopping List Automation</h3>
-            <p>Using Uipath (11/2023 - Present)</p>
-            <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
-        </div>
-        <div class="card">
-            <h3>Extraction of Dataset into an Excel Sheet</h3>
-            <p>Using Uipath (10/2023)</p>
-            <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
-        </div>
-        <div class="card">
-            <h3>Login Automation</h3>
-            <p>Using UiPath (11/2023)</p>
-            <p>Created an automation project in Uipath which does the basic login process automatically.</p>
-        </div>
-        <div class="card">
-            <h3>Online Portfolio</h3>
-            <p>(10/2023)</p>
-            <p>Created an online portfolio which generates a portfolio with user-given inputs.</p>
-        </div>
-        <div class="card">
-            <h3>Cricket Scorecard Management</h3>
-            <p>(07/2023 - 08/2023)</p>
-            <p>Created a Cricket scorecard management system with basic C programming.</p>
-        </div>
-    </section>
-
-    <section id="achievements" class="section">
-        <h2>Achievements</h2>
-        <div class="card">
-            <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
-        </div>
-        <div class="card">
-            <p>Gold and Bronze medals in SOF competitions</p>
-        </div>
-        <div class="card">
-            <p>Basics of robotics and attended competitions</p>
-        </div>
-    </section>
-
-    <section id="certificates" class="section">
-        <h2>Certificates</h2>
-        <div class="card">
-            <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
-        </div>
-        <div class="card">
-            <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
-        </div>
-        <div class="card">
-            <p>RPA Basics and Introduction to Uipath - Coursera</p>
-        </div>
-        <div class="card">
-            <p>Data Manipulation in RPA - Coursera</p>
-        </div>
-        <div class="card">
-            <p>Control Flow in RPA - Coursera</p>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <form action="https://formspree.io/f/{your-form-id}" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Valli Viswa Varshini M. All Rights Reserved.</p>
-    </footer>
-
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const shapes = document.querySelectorAll('.shape');
+            const options = {
+                threshold: 0.5
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
                 });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            shapes.forEach(shape => {
+                observer.observe(shape);
             });
         });
     </script>
+</head>
+<body>
+
+<header>
+    <h1>Valli Viswa Varshini M</h1>
+    <p>B.Tech Student of St. Joseph's College Of Engineering</p>
+</header>
+
+<section class="section info">
+    <div class="shape">
+        <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
+        <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
+        <p>Skills: C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
+    </div>
+</section>
+
+<section class="section projects">
+    <h2>Projects</h2>
+    <div class="shape project">
+        <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
+        <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
+    </div>
+    <div class="shape project">
+        <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
+        <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
+    </div>
+    <div class="shape project">
+        <h3>Login Automation - Using UiPath (11/2023)</h3>
+        <p>Created an automation project in Uipath which does the basic login process automatically.</p>
+    </div>
+    <div class="shape project">
+        <h3>Online Portfolio (10/2023)</h3>
+        <p>Created an online portfolio which generates a portfolio with user-given inputs.</p>
+    </div>
+    <div class="shape project">
+        <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
+        <p>Created a Cricket scorecard management system with basic C programming.</p>
+    </div>
+</section>
+
+<section class="section achievements">
+    <h2>Achievements</h2>
+    <div class="shape achievement">
+        <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
+    </div>
+    <div class="shape achievement">
+        <p>Gold and Bronze medals in SOF competitions</p>
+    </div>
+    <div class="shape achievement">
+        <p>Basics of robotics and attended competitions</p>
+    </div>
+</section>
+
+<section class="section certificates">
+    <h2>Certificates</h2>
+    <div class="shape certificate">
+        <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
+    </div>
+    <div class="shape certificate">
+        <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
+    </div>
+    <div class="shape certificate">
+        <p>RPA Basics and Introduction to Uipath - Coursera</p>
+    </div>
+    <div class="shape certificate">
+        <p>Data Manipulation in RPA - Coursera</p>
+    </div>
+    <div class="shape certificate">
+        <p>Control Flow in RPA - Coursera</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Valli Viswa Varshini M. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
