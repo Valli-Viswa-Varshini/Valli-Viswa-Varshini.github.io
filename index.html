@@ -27,7 +27,7 @@
             margin: 0.5rem 0;
             font-size: 1.2rem;
         }
-        section {
+        .section {
             padding: 2rem;
             max-width: 1000px;
             margin: auto;
@@ -35,7 +35,7 @@
             transform: translateY(20px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
-        section.visible {
+        .section.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -45,17 +45,6 @@
             display: inline-block;
             margin-bottom: 1rem;
             font-size: 2rem;
-        }
-        .info, .projects, .achievements, .certificates {
-            background: #fff;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .info:hover, .projects:hover, .achievements:hover, .certificates:hover {
-            transform: translateY(-10px);
         }
         .shape {
             background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
@@ -71,6 +60,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .shape.project {
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+        }
+        .shape.achievement {
+            background: linear-gradient(135deg, #fccb90, #d57eeb);
+        }
+        .shape.certificate {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -80,7 +78,7 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('.section');
             const shapes = document.querySelectorAll('.shape');
             const options = {
                 threshold: 0.5
@@ -111,67 +109,66 @@
     <p>B.Tech Student of St. Joseph's College Of Engineering</p>
 </header>
 
-<section class="info">
+<section class="section info">
     <div class="shape">
-        <h2>About Me</h2>
         <p>I am an adaptable student with a passion for technology and a keen interest in application development, configuration management, and database designing.</p>
         <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
         <p>Skills: C, Python, Java, Microsoft Excel, SQL, Adobe Photoshop, Microsoft Office, Figma, Canva, Communication Skills</p>
     </div>
 </section>
 
-<section class="projects">
+<section class="section projects">
     <h2>Projects</h2>
-    <div class="shape">
+    <div class="shape project">
         <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
         <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
     </div>
-    <div class="shape">
+    <div class="shape project">
         <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
         <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
     </div>
-    <div class="shape">
+    <div class="shape project">
         <h3>Login Automation - Using UiPath (11/2023)</h3>
         <p>Created an automation project in Uipath which does the basic login process automatically.</p>
     </div>
-    <div class="shape">
+    <div class="shape project">
         <h3>Online Portfolio (10/2023)</h3>
         <p>Created an online portfolio which generates a portfolio with user-given inputs.</p>
     </div>
-    <div class="shape">
+    <div class="shape project">
         <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
         <p>Created a Cricket scorecard management system with basic C programming.</p>
     </div>
 </section>
 
-<section class="achievements">
+<section class="section achievements">
     <h2>Achievements</h2>
-    <div class="shape">
+    <div class="shape achievement">
         <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering</p>
     </div>
-    <div class="shape">
+    <div class="shape achievement">
         <p>Gold and Bronze medals in SOF competitions</p>
     </div>
-    <div class="shape">
+    <div class="shape achievement">
         <p>Basics of robotics and attended competitions</p>
     </div>
 </section>
 
-<section class="certificates">
+<section class="section certificates">
     <h2>Certificates</h2>
-    <div class="shape">
+    <div class="shape certificate">
         <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
     </div>
-    <div class="shape">
+    <div class="shape certificate">
         <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
     </div>
-    <div class="shape">
+    <div class="shape certificate">
         <p>RPA Basics and Introduction to Uipath - Coursera</p>
     </div>
-    <div class="shape">
+    <div class="shape certificate">
         <p>Data Manipulation in RPA - Coursera</p>
     </div>
-    <div class="shape">
+    <div class="shape certificate">
         <p>Control Flow in RPA - Coursera</p>
     </div>
 </section>
