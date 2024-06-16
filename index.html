@@ -3,348 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valli Viswa Varshini M's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Valli Viswa Varshini M - Portfolio</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
             margin: 0;
             padding: 0;
-            background: #f0f4f8;
-            color: #333;
         }
         header {
-            background: linear-gradient(135deg, #000428, #004e92);
+            background: #333;
             color: #fff;
-            padding: 4rem 2rem;
+            padding: 1rem 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 4rem;
-        }
-        header p {
-            margin: 0.5rem 0;
-            font-size: 1.5rem;
         }
         nav {
-            background: #333;
+            background: #444;
             color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: static;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
+            padding: 0.5rem 0;
         }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
+        nav a {
             color: #fff;
+            margin: 0 1rem;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
         }
-        nav ul li a:hover {
-            color: #ff9a9e;
-        }
-        .section {
-            padding: 3rem 2rem;
-            max-width: 1000px;
-            margin: auto;
-            background: #000428;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        h2 {
-            color: #ff9a9e;
-            border-bottom: 3px solid #fad0c4;
-            display: inline-block;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        .shape {
-            background: #004e92;
-            color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        .shape.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .shape h3 {
-            margin-top: 0;
-        }
-        .project {
-            background: linear-gradient(135deg, #84fab0, #8fd3f4);
-        }
-        .achievement {
-            background: linear-gradient(135deg, #fccb90, #d57eeb);
-        }
-        .certificate {
-            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
         footer {
-            text-align: center;
-            padding: 1rem 0;
             background: #333;
             color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-        }
-        footer p {
-            margin: 0;
-        }
-        .skill-icon {
-            display: inline-block;
-            margin: 10px;
             text-align: center;
-            transition: transform 0.3s ease;
+            padding: 1rem 0;
         }
-        .skill-icon:hover {
-            transform: scale(1.2);
-        }
-        .skill-icon img {
-            width: 80px;
-            height: 80px;
-        }
-        .page {
-            display: none;
-        }
-        .page.active {
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             display: block;
+            margin: 1rem auto;
+        }
+        .section-title {
+            border-bottom: 2px solid #444;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('nav ul li a');
-            const pages = document.querySelectorAll('.page');
-            const sections = document.querySelectorAll('.section');
-            const shapes = document.querySelectorAll('.shape');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = e.target.getAttribute('href').substring(1);
-                    pages.forEach(page => {
-                        if (page.id === targetId) {
-                            page.classList.add('active');
-                        } else {
-                            page.classList.remove('active');
-                        }
-                    });
-                });
-            });
-
-            const options = {
-                threshold: 0.5
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, options);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            shapes.forEach(shape => {
-                observer.observe(shape);
-            });
-        });
-    </script>
 </head>
 <body>
-
-<div class="page active" id="about">
     <header>
         <h1>Valli Viswa Varshini M</h1>
-        <p>B.Tech Student at St. Joseph's College Of Engineering</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <p>B.Tech Student in Artificial Intelligence and Machine Learning</p>
     </header>
-</div>
-
-<div class="page" id="education">
-    <section class="section">
-        <h2>Education</h2>
-        <div class="shape">
-            <p>B.Tech in Artificial Intelligence and Machine Learning, St. Joseph's College Of Engineering (11/2022 - Present), Chennai</p>
-        </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="home">
+        <h2 class="section-title">Home</h2>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <p>Hello! I am Valli Viswa Varshini, an adaptable B.Tech student at St. Joseph's College of Engineering with a strong foundation in application development, configuration management, and database designing. I am passionate about machine learning, automation, and cybersecurity.</p>
     </section>
-</div>
-
-<div class="page" id="projects">
-    <section class="section">
-        <h2>Projects</h2>
-        <div class="shape project">
-            <h3>Shopping List Automation - Using Uipath (11/2023 - Present)</h3>
-            <p>Created an automation project in Uipath which automates the process of placing order in a website.</p>
-        </div>
-        <div class="shape project">
-            <h3>Extraction of Dataset into an Excel Sheet - Using Uipath (10/2023)</h3>
-            <p>Created an automation project in Uipath which automatically extracts the dataset from the given website, copies the data into an excel sheet, and sends the excel sheet as an email to the specified e-mail id.</p>
-        </div>
-        <div class="shape project">
-            <h3>Sentiment Analysis (01/2024)</h3>
-            <p>Developed a sentiment analysis ML model using customer review data, leveraging Python and machine learning algorithms to analyze and classify sentiment accurately. Employed techniques like data pre-processing, feature engineering, and model evaluation for robust performance.</p>
-        </div>
-        <div class="shape project">
-            <h3>Cricket Scorecard Management (07/2023 - 08/2023)</h3>
-            <p>Created a Cricket scorecard management system with basic C programming.</p>
-        </div>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p><strong>Degree:</strong> B.Tech in Artificial Intelligence and Machine Learning</p>
+        <p><strong>Institution:</strong> St. Joseph's College of Engineering</p>
+        <p><strong>Duration:</strong> 11/2022 - Present</p>
+        <p><strong>Location:</strong> Chennai, India</p>
+        <p><strong>CGPA:</strong> 8.46</p>
+        <p>I am an enthusiastic learner with a keen interest in machine learning and automation. Currently, I am pursuing a degree in AIML and continuously expanding my skills in AI and ML. I am also delving into Robotic Process Automation (RPA) using UiPath and have a passion for acquiring new knowledge and skills. My ultimate goal is to contribute to innovative solutions in AI and automation that can make a significant impact on society.</p>
     </section>
-</div>
-
-<div class="page" id="skills">
-    <section class="section">
-        <h2>Skills</h2>
-        <div class="shape">
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/c-programming.png" alt="C">
-                <p>C</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python">
-                <p>Python</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/java-coffee-cup-logo.png" alt="Java">
-                <p>Java</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/microsoft-excel-2019.png" alt="Excel">
-                <p>Microsoft Excel</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/sql.png" alt="SQL">
-                <p>SQL</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/adobe-photoshop--v1.png" alt="Photoshop">
-                <p>Adobe Photoshop</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/microsoft-office-2019.png" alt="Microsoft Office">
-                <p>Microsoft Office</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/figma.png" alt="Figma">
-                <p>Figma</p>
-            </div>
-            <div class="skill-icon">
-                <img src="https://img.icons8.com/color/96/000000/canva.png" alt="Canva">
-                <p>Canva</p>
-            </div>
-        </div>
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <h3>Artificial Intelligence and Machine Learning Projects</h3>
+        <ul>
+            <li>
+                <strong>Sentiment Analysis</strong> (January 2024)<br>
+                Developed a sentiment analysis ML model using customer review data.<br>
+                <strong>Technologies Used:</strong> Python, machine learning algorithms.<br>
+                <strong>Highlights:</strong> Data preprocessing, feature engineering, model evaluation.
+            </li>
+        </ul>
+        <h3>RPA Projects (UiPath)</h3>
+        <ul>
+            <li>
+                <strong>Shopping List Automation</strong> (November 2023)<br>
+                Automated the process of placing orders on a website.<br>
+                <strong>Technologies Used:</strong> UiPath.<br>
+                <strong>Highlights:</strong> Enhanced efficiency in online shopping tasks.
+            </li>
+            <li>
+                <strong>Login Automation</strong> (November 2023)<br>
+                Automated the basic login process.<br>
+                <strong>Technologies Used:</strong> UiPath.<br>
+                <strong>Highlights:</strong> Improved login process automation.
+            </li>
+            <li>
+                <strong>Dataset Extraction</strong> (October 2023)<br>
+                Extracted datasets from websites into Excel and automated email sending.<br>
+                <strong>Technologies Used:</strong> UiPath.<br>
+                <strong>Highlights:</strong> Streamlined data extraction and email automation.
+            </li>
+        </ul>
+        <h3>Other Projects</h3>
+        <ul>
+            <li>
+                <strong>Cricket Scorecard Management</strong> (July 2023 - August 2023)<br>
+                Created a scorecard management system using C programming.<br>
+                <strong>Technologies Used:</strong> C programming.<br>
+                <strong>Highlights:</strong> Efficient management of cricket scores.
+            </li>
+        </ul>
     </section>
-</div>
-
-<div class="page" id="experience">
-    <section class="section">
-        <h2>Experience</h2>
-        <div class="shape">
-            <h3>ML Intern at Codsoft (01/2024 - 02/2024)</h3>
-            <p>Created 3 ML projects such as Credit card fraud detection, Customer Churn Detection, SMS Spam Detection which includes data preprocessing and predicting the output.</p>
-            <h3>Cybersecurity Research Intern at Zetpeak (08/2023 - Present)</h3>
-            <p>Conducted a literature review to identify the latest research in a field of study, allowing for more informed decision-making on the research project. Published a research paper in a peer-reviewed journal, resulting in increased visibility for the research group.</p>
-        </div>
+    <section id="internships">
+        <h2 class="section-title">Internships</h2>
+        <ul>
+            <li>
+                <strong>ML Intern</strong> at Codsoft (January 2024 - February 2024)<br>
+                Projects: Credit card fraud detection, customer churn detection, SMS spam detection.<br>
+                <strong>Technologies Used:</strong> Python, machine learning.<br>
+                <strong>Highlights:</strong> Data preprocessing, predictive modeling.
+            </li>
+            <li>
+                <strong>Cybersecurity Research Intern</strong> at Zetpeak (August 2023 - Present)<br>
+                Conducted literature reviews to support research projects.<br>
+                <strong>Achievements:</strong> Published research papers in peer-reviewed journals.<br>
+                <strong>Highlights:</strong> Contributed to informed decision-making and increased research visibility.
+            </li>
+        </ul>
     </section>
-</div>
-
-<div class="page" id="achievements">
-    <section class="section">
-        <h2>Achievements</h2>
-        <div class="shape achievement">
-            <p>HACK-AI-THON 2024 - Runner Up (02/2024): Created an analysis dashboard using Power BI by correlating data LULC (Land Use Land Cover) and GDP data from Bhuvan and RBI websites.</p>
-        </div>
-        <div class="shape achievement">
-            <p>Finalist in NO-CODE AI Hackathon (02/2024): Created the front-end prototype of our idea in Flutterflow.</p>
-        </div>
-        <div class="shape achievement">
-            <p>Volunteer for Geekitrix Symposium at St. Joseph's College of Engineering: Organized and coordinated events with volunteers, ensuring all necessary resources were available in our college Symposium.</p>
-        </div>
-        <div class="shape achievement">
-            <p>Participated in SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</p>
-        </div>
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> C, Python, Java</li>
+            <li><strong>Tools & Technologies:</strong> Microsoft Excel, SQL, Power BI, Microsoft Office Suite (Word, PowerPoint), Figma, Canva, FlutterFlow, UiPath</li>
+            <li><strong>Soft Skills:</strong> Communication, Design, Basics of Robotics</li>
+        </ul>
     </section>
-</div>
-
-<div class="page" id="certificates">
-    <section class="section">
-        <h2>Certificates</h2>
-        <div class="shape certificate">
-            <p>Introduction to Robotic Process Automation - Infosys Springboard</p>
-        </div>
-        <div class="shape certificate">
-            <p>RPA Basics and Introduction to Uipath - Coursera</p>
-        </div>
-        <div class="shape certificate">
-            <p>Data Manipulation in RPA - Coursera</p>
-        </div>
-        <div class="shape certificate">
-            <p>Control Flow in RPA - Coursera</p>
-        </div>
-        <div class="shape certificate">
-            <p>Advanced Excel Course for job and real world - Udemy</p>
-        </div>
-        <div class="shape certificate">
-            <p>The Complete Python Bootcamp From Zero to Hero in Python - Udemy</p>
-        </div>
+    <section id="achievements">
+        <h2 class="section-title">Achievements</h2>
+        <ul>
+            <li><strong>HACK-AI-THON 2024</strong> - Runner Up</li>
+            <li><strong>NO-CODE AI Hackathon</strong> - Finalist</li>
+            <li><strong>Volunteer for Geekitrix Symposium</strong> at St. Joseph's College of Engineering</li>
+            <li>Participations: SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</li>
+        </ul>
     </section>
-</div>
-
-<div class="page" id="contact">
-    <section class="section">
-        <h2>Contact</h2>
-        <div class="shape">
-            <p>Email: <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/valliviswavarshini" target="_blank">linkedin.com/in/valliviswavarshini</a></p>
-        </div>
+    <section id="certificates">
+        <h2 class="section-title">Certificates</h2>
+        <ul>
+            <li><strong>Introduction to Robotic Process Automation</strong> - Infosys Springboard</li>
+            <li><strong>RPA Basics and Introduction to UiPath</strong> - Coursera</li>
+            <li><strong>Data Manipulation in RPA</strong> - Coursera</li>
+            <li><strong>Control Flow in RPA</strong> - Coursera</li>
+            <li><strong>Advanced Excel Course for Job and Real World</strong> - Udemy</li>
+            <li><strong>The Complete Python Bootcamp from Zero to Hero in Python</strong> - Udemy</li>
+            <li><strong>UiPath Academy Automation Explorer Training</strong> - UiPath Academy</li>
+        </ul>
     </section>
-</div>
-
-<footer>
-    <p>&copy; 2024 Valli Viswa Varshini M. All rights reserved.</p>
-</footer>
-
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p><strong>Email:</strong> <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
+        <p><strong>Phone:</strong> +91 6382897656</p>
+        <p><strong>Location:</strong> Chennai, India</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/valli-viswa-varshini-m-0947a7265">Valli Viswa Varshini M</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Valli-Viswa-Varshini">Valli-Viswa-Varshini</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Valli Viswa Varshini M. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
