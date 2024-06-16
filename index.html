@@ -4,187 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valli Viswa Varshini M - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            background: #f4f4f9;
         }
         header {
             background: #333;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        header h1 {
+        nav ul {
+            list-style: none;
+            padding: 0;
             margin: 0;
-        }
-        nav {
-            background: #444;
-            color: #fff;
             display: flex;
             justify-content: center;
-            padding: 0.5rem 0;
         }
-        nav a {
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
             color: #fff;
-            margin: 0 1rem;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
-        section {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
+        nav ul li a:hover {
+            color: #f4f4f9;
         }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
         }
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             display: block;
-            margin: 1rem auto;
+            margin: 2rem auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin: 2rem 0;
+            animation: fadeIn 2s;
         }
         .section-title {
-            border-bottom: 2px solid #444;
-            padding-bottom: 0.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #333;
+            display: block;
+            margin: 10px auto;
+        }
+        .intro, .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        ul li strong {
+            color: #333;
+        }
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Valli Viswa Varshini M</h1>
-        <p>B.Tech Student in Artificial Intelligence and Machine Learning</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#internships">Internships</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section id="home">
-        <h2 class="section-title">Home</h2>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <p>Hello! I am Valli Viswa Varshini, an adaptable B.Tech student at St. Joseph's College of Engineering with a strong foundation in application development, configuration management, and database designing. I am passionate about machine learning, automation, and cybersecurity.</p>
-    </section>
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p><strong>Degree:</strong> B.Tech in Artificial Intelligence and Machine Learning</p>
-        <p><strong>Institution:</strong> St. Joseph's College of Engineering</p>
-        <p><strong>Duration:</strong> 11/2022 - Present</p>
-        <p><strong>Location:</strong> Chennai, India</p>
-        <p><strong>CGPA:</strong> 8.46</p>
-        <p>I am an enthusiastic learner with a keen interest in machine learning and automation. Currently, I am pursuing a degree in AIML and continuously expanding my skills in AI and ML. I am also delving into Robotic Process Automation (RPA) using UiPath and have a passion for acquiring new knowledge and skills. My ultimate goal is to contribute to innovative solutions in AI and automation that can make a significant impact on society.</p>
-    </section>
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <h3>Artificial Intelligence and Machine Learning Projects</h3>
-        <ul>
-            <li>
-                <strong>Sentiment Analysis</strong> (January 2024)<br>
-                Developed a sentiment analysis ML model using customer review data.<br>
-                <strong>Technologies Used:</strong> Python, machine learning algorithms.<br>
-                <strong>Highlights:</strong> Data preprocessing, feature engineering, model evaluation.
-            </li>
-        </ul>
-        <h3>RPA Projects (UiPath)</h3>
-        <ul>
-            <li>
-                <strong>Shopping List Automation</strong> (November 2023)<br>
-                Automated the process of placing orders on a website.<br>
-                <strong>Technologies Used:</strong> UiPath.<br>
-                <strong>Highlights:</strong> Enhanced efficiency in online shopping tasks.
-            </li>
-            <li>
-                <strong>Login Automation</strong> (November 2023)<br>
-                Automated the basic login process.<br>
-                <strong>Technologies Used:</strong> UiPath.<br>
-                <strong>Highlights:</strong> Improved login process automation.
-            </li>
-            <li>
-                <strong>Dataset Extraction</strong> (October 2023)<br>
-                Extracted datasets from websites into Excel and automated email sending.<br>
-                <strong>Technologies Used:</strong> UiPath.<br>
-                <strong>Highlights:</strong> Streamlined data extraction and email automation.
-            </li>
-        </ul>
-        <h3>Other Projects</h3>
-        <ul>
-            <li>
-                <strong>Cricket Scorecard Management</strong> (July 2023 - August 2023)<br>
-                Created a scorecard management system using C programming.<br>
-                <strong>Technologies Used:</strong> C programming.<br>
-                <strong>Highlights:</strong> Efficient management of cricket scores.
-            </li>
-        </ul>
-    </section>
-    <section id="internships">
-        <h2 class="section-title">Internships</h2>
-        <ul>
-            <li>
-                <strong>ML Intern</strong> at Codsoft (January 2024 - February 2024)<br>
-                Projects: Credit card fraud detection, customer churn detection, SMS spam detection.<br>
-                <strong>Technologies Used:</strong> Python, machine learning.<br>
-                <strong>Highlights:</strong> Data preprocessing, predictive modeling.
-            </li>
-            <li>
-                <strong>Cybersecurity Research Intern</strong> at Zetpeak (August 2023 - Present)<br>
-                Conducted literature reviews to support research projects.<br>
-                <strong>Achievements:</strong> Published research papers in peer-reviewed journals.<br>
-                <strong>Highlights:</strong> Contributed to informed decision-making and increased research visibility.
-            </li>
-        </ul>
-    </section>
-    <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> C, Python, Java</li>
-            <li><strong>Tools & Technologies:</strong> Microsoft Excel, SQL, Power BI, Microsoft Office Suite (Word, PowerPoint), Figma, Canva, FlutterFlow, UiPath</li>
-            <li><strong>Soft Skills:</strong> Communication, Design, Basics of Robotics</li>
-        </ul>
-    </section>
-    <section id="achievements">
-        <h2 class="section-title">Achievements</h2>
-        <ul>
-            <li><strong>HACK-AI-THON 2024</strong> - Runner Up</li>
-            <li><strong>NO-CODE AI Hackathon</strong> - Finalist</li>
-            <li><strong>Volunteer for Geekitrix Symposium</strong> at St. Joseph's College of Engineering</li>
-            <li>Participations: SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</li>
+
+    <div class="container">
+        <section id="about" class="fade-in">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 class="section-title">Valli Viswa Varshini M</h1>
+            <div class="intro">
+                <p><strong>Course:</strong> B.Tech Artificial Intelligence and Machine Learning</p>
+                <p><strong>Institution:</strong> St. Joseph's College of Engineering, Chennai, India</p>
+                <p><strong>CGPA:</strong> 8.46</p>
+                <p>I am a student pursuing AIML and keen at learning skills in AI and ML. Currently, I am learning RPA (UiPath) and enjoy acquiring new knowledge. My ultimate goal is to contribute to innovative solutions in AI and automation that make a significant impact on society.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <h2 class="section-title">Projects</h2>
+            <h3>Artificial Intelligence and Machine Learning Projects</h3>
+            <ul>
+                <li>
+                    <strong>Sentiment Analysis</strong> (January 2024)<br>
+                    Developed a sentiment analysis ML model using customer review data.<br>
+                    <strong>Technologies Used:</strong> Python, machine learning algorithms.<br>
+                    <strong>Highlights:</strong> Data preprocessing, feature engineering, model evaluation.
+                </li>
+            </ul>
+            <h3>RPA Projects (UiPath)</h3>
+            <ul>
+                <li>
+                    <strong>Shopping List Automation</strong> (November 2023)<br>
+                    Automated the process of placing orders on a website.<br>
+                    <strong>Technologies Used:</strong> UiPath.<br>
+                    <strong>Highlights:</strong> Enhanced efficiency in online shopping tasks.
+                </li>
+                <li>
+                    <strong>Login Automation</strong> (November 2023)<br>
+                    Automated the basic login process.<br>
+                    <strong>Technologies Used:</strong> UiPath.<br>
+                    <strong>Highlights:</strong> Improved login process automation.
+                </li>
+                <li>
+                    <strong>Dataset Extraction</strong> (October 2023)<br>
+                    Extracted datasets from websites into Excel and automated email sending.<br>
+                    <strong>Technologies Used:</strong> UiPath.<br>
+                    <strong>Highlights:</strong> Streamlined data extraction and email automation.
+                </li>
+            </ul>
+            <h3>Other Projects</h3>
+            <ul>
+                <li>
+                    <strong>Cricket Scorecard Management</strong> (July 2023 - August 2023)<br>
+                    Created a scorecard management system using C programming.<br>
+                    <strong>Technologies Used:</strong> C programming.<br>
+                    <strong>Highlights:</strong> Efficient management of cricket scores.
+                </li>
+            </ul>
+        </section>
+
+        <section id="internships" class="fade-in">
+            <h2 class="section-title">Internships</h2>
+            <ul>
+                <li>
+                    <strong>ML Intern</strong> at Codsoft (January 2024 - February 2024)<br>
+                    Projects: Credit card fraud detection, customer churn detection, SMS spam detection.<br>
+                    <strong>Technologies Used:</strong> Python, machine learning.<br>
+                    <strong>Highlights:</strong> Data preprocessing, predictive modeling.
+                </li>
+                <li>
+                    <strong>Cybersecurity Research Intern</strong> at Zetpeak (August 2023 - Present)<br>
+                    Conducted literature reviews to support research projects.<br>
+                    <strong>Achievements:</strong> Published research papers in peer-reviewed journals.<br>
+                    <strong>Highlights:</strong> Contributed to informed decision-making and increased research visibility.
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills" class="fade-in">
+            <h2 class="section-title">Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> C, Python, Java</li>
+                <li><strong>Tools & Technologies:</strong> Microsoft Excel, SQL, Power BI, Microsoft Office Suite (Word, PowerPoint), Figma, Canva, FlutterFlow, UiPath</li>
+                <li><strong>Soft Skills:</strong> Communication, Design, Basics of Robotics</li>
+            </ul>
+        </section>
+
+        <section id="achievements" class="fade-in">
+            <h2 class="section-title">Achievements</h2>
+            <ul>
+                <li><strong>HACK-AI-THON 2024</strong> - Runner Up</li>
+                <li><strong>NO-CODE AI Hackathon</strong> - Finalist</li>
+                <li><strong>Volunteer for Geekitrix Symposium</strong> at St. Joseph's College of Engineering</li>
+                <li>Participations: SIH-2023, IITB-FOSSEE MAPATHON, KAVACH-2023, Poornima Hackathon</li>
         </ul>
     </section>
-    <section id="certificates">
-        <h2 class="section-title">Certificates</h2>
-        <ul>
-            <li><strong>Introduction to Robotic Process Automation</strong> - Infosys Springboard</li>
-            <li><strong>RPA Basics and Introduction to UiPath</strong> - Coursera</li>
-            <li><strong>Data Manipulation in RPA</strong> - Coursera</li>
-            <li><strong>Control Flow in RPA</strong> - Coursera</li>
-            <li><strong>Advanced Excel Course for Job and Real World</strong> - Udemy</li>
-            <li><strong>The Complete Python Bootcamp from Zero to Hero in Python</strong> - Udemy</li>
-            <li><strong>UiPath Academy Automation Explorer Training</strong> - UiPath Academy</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p><strong>Email:</strong> <a href="mailto:valliviswavarshini@gmail.com">valliviswavarshini@gmail.com</a></p>
-        <p><strong>Phone:</strong> +91 6382897656</p>
-        <p><strong>Location:</strong> Chennai, India</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/valli-viswa-varshini-m-0947a7265">Valli Viswa Varshini M</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Valli-Viswa-Varshini">Valli-Viswa-Varshini</a></p>
-    </section>
+    <section id="certificates" class="fade-in">
+            <h2 class="section-title">Certificates</h2>
+            <ul>
+                <li><strong>Data Science and Machine Learning</strong> - Coursera</li>
+                <li><strong>RPA Developer Advanced</strong> - UiPath Academy</li>
+                <li><strong>Python for Everybody</strong> - University of Michigan on Coursera</li>
+                <li><strong>Cybersecurity Essentials</strong> - Cisco Networking Academy</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> valli.viswa@example.com</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/valli-viswa-varshini" target="_blank">linkedin.com/in/valli-viswa-varshini</a></p>
+                <p><strong>Phone:</strong> +91-1234567890</p>
+            </div>
+        </section>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Valli Viswa Varshini M. All Rights Reserved.</p>
+        <p>&copy; 2024 Valli Viswa Varshini M. All rights reserved.</p>
     </footer>
 </body>
 </html>
